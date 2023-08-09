@@ -4,16 +4,21 @@
   @content
 }}
 @mixin tablet{
-  @media (max-width: 852px) {
+  @media (max-width: 768px) {
+    @content
+  }
+}
+@mixin mid-device{
+  @media (max-width: 851px) {
     @content
   }
 }
   @mixin laptop{
-    @media (max-width: 1200px) {
+    @media (max-width: 992px) {
       @content
     }}
     @mixin Anydevice{
-      @media (max-width: 1800px) {
+      @media (min-width:1200px) {
         @content
       }}
     .logo {
@@ -36,26 +41,41 @@
 .more{
   position: relative;
   left: 1236px;
-  // @include mobile{
-  // position: relative;
-  // left: 96px;
+  @include tablet{
+  position: relative;
+  left: 196px;
+}
   @include mobile{
     position: relative;
-  left: 196px;
+  left: 457px;
    
     
   // }
 }
 }
+
 .Home {
   margin: 0px;
   padding: 0px;
   height: 100vh;
+  width: 1504px;
   background-color: #a7bcff;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include laptop{
+    width: 959px;
+  }
+  @include tablet{
+   width: 760px;
+   height: 700px;
+  }
+  @include mobile{
+    width: 100%;
+    height: 100%;
+    // overflow: hidden;
+   }
 }
 .container {
   border: 1px solid white;
@@ -64,9 +84,17 @@
   height: 80%;
   display: flex;
   overflow: hidden;
+// @include tablet{
+//     width: 65%;
+//     height: 80%;
+//     display: flex;
+//     overflow: hidden;
+//     margin-left: -666px;  
+//   }
   @include mobile{
     width: 100%;
     height: 100%;
+    overflow: hidden;
    }
 }
 .Sidebar {
@@ -74,6 +102,7 @@
   border-right: 1px solid #636bce;
   background-color: #636bce;
   overflow: scroll;
+  
 }
 
 .Navbar {
@@ -84,9 +113,33 @@
   padding: 10px;
   justify-content: space-between;
   color: #ddddf7;
-  // width: 400px;
+  width: 131vw;
+  @include mid-device{
+    width: 800px;
+  }
+  @include laptop{
+    display: flex;
+    // width: px;
+    width: 939px;
+    height: 100%;
+    overflow: hidden;
+    // width: 14000px;
+    // margin-top:-40px;
+  }
+  @include tablet{
+    display: flex;
+    // width: px;
+    height: 100%;
+    width: 747px;
+    overflow: hidden;
+  }
   @include mobile{
     display: flex;
+    // width: px;
+    width: 562px;
+    height: 100%;
+    overflow: hidden;
+    // width: 14000px;
     // margin-top:-40px;
   }
 }
@@ -135,8 +188,25 @@
   cursor: pointer;
   position: relative;
   left: 1341px;
-  @include mobile{
+  @include laptop{
+    background-color: #5d5b8d;
+    color: #ddddf7;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 800px;
     display: flex;
+    padding: 10px;
+
+  }
+  @include tablet{
+    display: none;
+   
+    
+  }
+  @include mobile{
+    display: none;
     margin-left: 233px;
     padding: 8px;
     
@@ -148,7 +218,7 @@
   left: 112px;
   @include mobile{
     position: relative;
-    left: 128px;
+    left: 366px;
    
    
     
